@@ -1,3 +1,5 @@
+
+
 # Linux-server med Node.js & MySQL
 
 ## 0. Installer Nano
@@ -16,6 +18,11 @@ yum install mysql-server
 Start/stop/restart
 ```
 service mysqld start/stop/restart
+```
+
+Konfigurer MySQL
+```
+sudo /usr/bin/mysql_secure_installation
 ```
 
 ## 2. Installer Node.js
