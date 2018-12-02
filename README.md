@@ -1,6 +1,7 @@
 
 
 # Linux-server med Node.js & MySQL
+Styresystemet er Centos 7.5 x64
 
 ## 0. Installer Nano
 Nano er en linux tekst editor, som er rigtig let at bruge.
@@ -13,33 +14,33 @@ yum install nano
 ## 1. Installer MySQL
 Installation
 ```
-yum install mysql-server
+yum install mariadb-server
 ```
 Start/stop/restart
 ```
-service mysqld start/stop/restart
+systemctl start mariadb
 ```
 
 Konfigurer MySQL
 ```
-sudo /usr/bin/mysql_secure_installation
+/usr/bin/mysql_secure_installation
 ```
 
 ## 2. Installer Node.js
-Installation
+Tilføj node.js repository
 ```
-yum install epel-release
+yum install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_11.x | sudo -E bash -
+```
+Installér node.js
+```
 yum install nodejs
-yum install npm
-npm install -g n
 ```
-Opdater nodejs
+Verificér versioner
 ```
-n lts
-n
+node -v
+npm -v
 ```
-
-**Genstart din linux-box nu.**
 
 ## 3. Installer PM2
 PM2 er en process manager til Node.js applikationer.
